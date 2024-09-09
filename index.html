@@ -4,7 +4,13 @@
     <meta name="viewport" content="width=device-width">
     <title>Store notes and learning goals while you are coding</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>    
+    <script src="app.js"></script>
+    <script>
+        navigator.serviceWorker.register("serviceworker.js", {
+            type: "module"
+        })
+    </script>
+    <link rel="manifest" href="app.webmanifest" />
 </head>
 
 <body>
@@ -14,7 +20,7 @@
         <ul id="toolbar">
             <li>
                 <button type="submit">
-                    <span class="icon">save</span>                
+                    <span class="icon">save</span>
                     Save
                 </button>
             </li>
@@ -23,8 +29,8 @@
     <ul id="toolbar">
         <li>
             <button id="btnLearn">
-                <span class="icon">school</span>                
-                Learn                 
+                <span class="icon">school</span>
+                Learn
             </button>
         </li>
     </ul>
