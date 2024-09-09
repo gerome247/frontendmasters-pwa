@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Store notes and learning goals while you are coding</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
@@ -11,9 +12,15 @@
         })
     </script>
     <link rel="manifest" href="app.webmanifest" />
+    <script async src="https://unpkg.com/pwacompat" crossorigin="anonymous"></script>
+    <style>
+        link[rel="manifest"] {
+            --pwacompat-splash-font: 24px Verdana;
+        }
+    </style>
 </head>
 
-<body>
+<body class="body">
     <h1>Codepad Masters</h1>
     <form>
         <textarea placeholder="Enter your new note"></textarea>
@@ -33,10 +40,42 @@
                 Learn
             </button>
         </li>
+        <li>
+            <button id="btnLearn2"  class="my-button my-button-share">
+                Share
+            </button>
+        </li>
+        <li>
+            <button id="btnLearn" class="my-button my-button-learn">
+                <span class="icon">school</span>
+                reload
+            </button>
+        </li>
     </ul>
     <ul id="notes">
 
 
     </ul>
+    <script>
+        const myButton = document.querySelector(".my-button");
+        const btnShare = document.querySelector(".my-button-share");
+
+function onFooClick() {
+  //myButton.innerText = "button clicked";
+  window.location.reload();
+}
+function onShareClick() {
+    navigator.share({
+        title: "Recommendation",
+        text: "Check my website",
+        url: "bbc.co.uk"
+    })
+}
+myButton.onclick = onFooClick;
+btnShare.onclick = onShareClick;
+
+
+
+    </script>
 </body>
 </html>

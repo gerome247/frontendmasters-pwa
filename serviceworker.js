@@ -1,6 +1,6 @@
 console.log("I'm a service worker, ready to serve");
 
-const url = ["/", "app.js", "styles.css"];
+const url = ["/", "app.js", "styles.css","https://unpkg.com/pwacompat", "https://fonts.gstatic.com/s/materialicons/v67/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"];
 
 
 // Prefetching the assets
@@ -58,4 +58,4 @@ self.addEventListener('fetch', event => {
                 return response || fetchPromise; // cached or a network fetch
             })
         );
-    }); 
+    });
