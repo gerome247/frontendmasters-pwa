@@ -3,6 +3,19 @@
     "start_url": "/",
     "scope": "/",
     "name": "CodepadMasters, the best notepad for your device",
+    "description": "The best notepad app! CodepadMasters, the best notepad for your device",
+    "screenshots": [
+        {"src": "screenshot.png",
+        "sizes": "760x548",
+        "type": "image/png",
+        "form_factor": "wide"
+    },
+        {"src": "screenshot.png",
+        "sizes": "760x548",
+        "type": "image/png",
+        "form_factor": "narrow"
+    }
+    ],
     "short_name": "CodepadM",
     "display": "standalone",
     "theme_color": "#55887c",

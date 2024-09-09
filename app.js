@@ -20,10 +20,28 @@ document.addEventListener("DOMContentLoaded", event => {
         location.href = "https://frontendmasters.com";
     })
 
-    if(navigator.storage && navigator.storage.persist) {
-        const granted = await navigator.storage.persist();
-        track('storage-persist-request', granted);
-    }
+    // if(navigator.storage && navigator.storage.persist) {
+    //     const granted = await navigator.storage.persist();
+    //     track('storage-persist-request', granted);
+    // }
+
+    //chrome only for an install button before app is installed
+
+    document.getElementById("btnInstall").addEventListener("click", event => {
+       // navigator.app.install
+       console.log('bipEvent', bipEvent)
+       if(bipEvent){
+        bipEvent.prompt();
+       } else {
+        alert("i'm sorry, do it manually");
+       }
+    });
+    let bipEvent = null
+    window.addEventListener('beforeinstallprompt', event => {
+        document.querySelector("#btnInstall").disabled = false;
+        event.preventDefault()
+        bipEvent = event;
+    });
 
 })
 
